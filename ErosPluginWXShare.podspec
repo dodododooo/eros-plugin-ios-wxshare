@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.name         = "ErosPluginWXShare"
   s.version      = "1.0.5"
   s.summary      = "ErosPluginUMShare Source ."
-  s.homepage     = 'https://github.com/bmfe/eros-plugin-ios-wxshare'
+  s.homepage     = 'https://github.com/LiHuiZai/eros-plugin-ios-wxshare.git'
   s.license      = "MIT"
   s.authors      = { "xionghuayu" => "18601949015@163.com" }
   s.platform     = :ios
