@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name         = "ErosPluginWXShare"
-  s.version      = "1.0.5"
+  s.version      = "1.1.0"
   s.summary      = "ErosPluginUMShare Source ."
   s.homepage     = 'https://github.com/LiHuiZai/eros-plugin-ios-wxshare'
   s.license      = "MIT"
