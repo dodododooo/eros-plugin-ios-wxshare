@@ -14,7 +14,7 @@
 #import "BMMediatorManager.h"
 #import "NSDictionary+Util.h"
 #import <WXApi.h>
-
+extern NSString * wx_universalLink;
 WX_PlUGIN_EXPORT_MODULE(bmWXShare, BMUmengModule)
 
 @interface BMUmengModule ()
@@ -58,7 +58,7 @@ WX_EXPORT_METHOD(@selector(authLogin:))
                                      redirectURL:info[@"redirectURL"]];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-      [WXApi registerApp:info[@"appKey"] universalLink:@"https://mall.winnermedical.com/"];
+      [WXApi registerApp:info[@"appKey"] universalLink:wx_universalLink];
     });
 
     [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
