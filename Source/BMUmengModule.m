@@ -57,8 +57,10 @@ WX_EXPORT_METHOD(@selector(authLogin:))
                                        appSecret:info[@"appSecret"]
                                      redirectURL:info[@"redirectURL"]];
     
-    [WXApi registerApp:info[@"appKey"]];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [WXApi registerApp:info[@"appKey"] universalLink:@"https://mall.winnermedical.com/"];
+    });
+
     [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
 }
 
