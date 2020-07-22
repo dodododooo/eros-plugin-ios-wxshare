@@ -27,6 +27,7 @@ WX_PlUGIN_EXPORT_MODULE(ErosOpenMiniprogram, AppOpenMiniprogramModel)
 
 WX_EXPORT_METHOD_SYNC(@selector(isInstallWXApp))
 WX_EXPORT_METHOD_SYNC(@selector(open:path:type:))
+WX_EXPORT_METHOD_SYNC(@selector(openMarket:towhich:))
 
 /** 判断是否安装了微信 */
 -(BOOL)isInstallWXApp
@@ -49,6 +50,22 @@ WX_EXPORT_METHOD_SYNC(@selector(open:path:type:))
        
    });
    
+}
+-(void)openMarket:(NSString *)appId towhich:(NSString *)name {
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSString *version = [UIDevice currentDevice].systemVersion;
+            NSString *appstoreUrlString;
+            if ([name isEqualToString:@"comment"]) {
+                appstoreUrlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?mt=8&action=write-review",appId];
+            }else{
+                appstoreUrlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appId];//
+            }
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appstoreUrlString]];
+        
+    });
+
 }
 
 - (BOOL)applicationOpenURL:(NSUserActivity *)userActivity
