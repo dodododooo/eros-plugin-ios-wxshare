@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name         = "ErosPluginWXShare"
-  s.version      = "1.11.3"
+  s.version      = "1.11.4"
   s.summary      = "ErosPluginUMShare Source ."
   s.homepage     = 'https://github.com/dodododooo/eros-plugin-ios-wxshare'
   s.license      = "MIT"
@@ -15,4 +15,5 @@ Pod::Spec.new do |s|
   s.dependency 'UMShare/Social/WeChat'
   s.dependency 'UMCommon'
   s.dependency 'UMDevice'
+  s.dependency 'WechatOpenSDK', '1.9.2'
 end
